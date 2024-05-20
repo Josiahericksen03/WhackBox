@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll the Dice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">Welcome to Dice</div>
+    <div class="center-container">
+        <div id="game-message" class="game-message"></div>
+        <div id="status" class="status"></div>
+        <div class="dice-container">
+            <img id="dice" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png" alt="Dice showing 1">
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="guess('h')">Higher</button>
+            <button class="button" onclick="guess('l')">Lower</button>
+        </div>
+    </div>
+    <script src="dice.js"></script>
+</body>
+</html>

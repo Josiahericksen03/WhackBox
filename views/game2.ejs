@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #game-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #game-result {
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors Game</h1>
+    <div id="game-area">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <h2 id="game-result"></h2>
+    </div>
+
+    <script>
+        document.getElementById('rock').addEventListener('click', function() { playGame('rock'); });
+        document.getElementById('paper').addEventListener('click', function() { playGame('paper'); });
+        document.getElementById('scissors').addEventListener('click', function() { playGame('scissors'); });
+
+        function playGame(playerChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const npcChoice = choices[Math.floor(Math.random() * choices.length)];
+            const result = determineWinner(playerChoice, npcChoice);
+            document.getElementById('game-result').textContent = `You chose ${playerChoice}, NPC chose ${npcChoice}. ${result}`;
+        }
+
+        function determineWinner(player, npc) {
+            if (player === npc) {
+                return "It's a tie!";
+            } else if ((player === 'rock' && npc === 'scissors') ||
+                       (player === 'paper' && npc === 'rock') ||
+                       (player === 'scissors' && npc === 'paper')) {
+                return "You win!";
+            } else {
+                return "You lose!";
+            }
+        }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

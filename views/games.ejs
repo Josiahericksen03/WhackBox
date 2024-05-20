@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    h1 {
+        text-align: center;
+        margin-left: 20px;
+    }
+</style>
+<body>
+    <h1 >Games List</h1>
+
+    <div id="video-grid">
+        <!-- Videos will be inserted here -->
+    </div>
+
+    <!-- Buttons to navigate to different screens -->
+    <div id="button-container">
+        <button onclick="startGame1()" id="game1-button">Game 1</button>
+        <button onclick="startGame1()" id="game2-button">Game 2</button>
+        <button onclick="startGame1()" id="game3-button">Game 3</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

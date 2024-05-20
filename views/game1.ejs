@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games 1</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #4c2c69; /* Kahoot-like dark purple background */
+    }
+    h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-top: 50px;
+        font-size: 3em;
+    }
+    #trivia-game {
+        text-align: center;
+        margin-top: 20px;
+        display: none; /* Initially hide the trivia game */
+        color: #ffffff;
+    }
+    #video-grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px;
+        gap: 20px; /* Adds spacing between video elements */
+    }
+    #answers {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+    }
+    #answers li {
+        padding: 0 10px; /* Space between buttons */
+    }
+    #answers button {
+        padding: 15px 25px;
+        font-size: 20px;
+        color: white;
+        background-color: #01a3a4; /* Kahoot-like blue */
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    #answers button:hover {
+        background-color: #018989; /* Darker shade on hover */
+    }
+    #start-trivia-button {
+        display: block;
+        margin: 50px auto; /* Centers the button horizontally */
+        padding: 15px 30px;
+        font-size: 20px;
+        color: white;
+        background-color: #28a745; /* Vibrant green */
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    #start-trivia-button:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+    #timer {
+        font-size: 1.5em;
+        color: #ffcd38; /* Bright yellow for visibility */
+    }
+    #question {
+        font-size: 1.8em; /* Make question text larger */
+        margin-bottom: 20px; /* Add space below the question */
+    }
+    #return-to-lobby-button {
+    display: none; /* Initially hide the button */
+    margin: 50px auto; /* Centers the button horizontally */
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: #007bff; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#return-to-lobby-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+#game-over-message {
+    color: #ffffff; /* White color for text */
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+
+</style>
+
+<body>
+    <h1>Trivia Game!</h1>
+
+    <div id="video-grid">
+        <!-- Videos will be inserted here -->
+    </div>
+    <button id="start-trivia-button">Start Trivia</button>
+
+    <div id="trivia-game">
+        <h2>Question</h2>
+        <p id="question"></p>
+        <ul id="answers">
+            <li><button onclick="submitAnswer('A')">A</button></li>
+            <li><button onclick="submitAnswer('B')">B</button></li>
+            <li><button onclick="submitAnswer('C')">C</button></li>
+            <li><button onclick="submitAnswer('D')">D</button></li>
+        </ul>
+        <p><span id="timer"></span></p>
+    </div>
+    <p id="game-over-message" style="display:none; color: #ffffff; text-align: center; font-size: 1.5em;"></p>
+
+    <button id="return-to-lobby-button" style="display:none;">Return to Lobby</button>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

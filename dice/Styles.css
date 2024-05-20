@@ -1,0 +1,76 @@
+body {
+    background-color: #212529; 
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #ffd700;
+    font-family: 'Trebuchet MS', sans-serif; 
+    display: flex;
+    flex-direction: column;
+}
+
+.center-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc3545;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #28a745; 
+    color: #dc3545; 
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 5px solid #dc3545; /* Red bottom border for emphasis */
+}
+
+
+#dice {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    animation: rollDiceAnimation 2s infinite; 
+}
+
+@keyframes rollDiceAnimation {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545; 
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #c82333; 
+}

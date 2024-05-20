@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Styles for nav bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.Background {
+    display: block;
+    padding: 0%;
+    object-fit: cover;
+    background: url(assets/Background.gif) repeat;
+    background-size: 393px 69px;
+    height: 400px;
+}
+
+#WelcomeContainer {
+    color: #000000;
+    max-width: 45%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: .375rem;
+    box-shadow: 0 19px 38px rgba(15,23,42,.3),0 15px 12px rgba(15,23,42,.22);
+}
+
+.Lobby {
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Styles for where videos are presented */
+#video-grid {
+    padding-top: 40px;
+    padding-left: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 300px;
+}
+
+video {
+    width: 200px;
+    height: 200px;
+    justify-content: cover;
+    border-style: solid;
+}
+
+/* Add styles for the Start Game button container */
+div.start-game-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* High z-index to bring the button to the front */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script>
+    const ROOM_ID = "<%= roomId %>"
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="Background"> 
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+    </ul>
+
+    <div id="WelcomeContainer">
+      <h1>Welcome to WhackBox!</h1>
+      <h2>Send the link to invite your friends, you'll see them join below!</h2>
+    </div>
+  </div>
+  <div class="Lobby">
+    <h1>Your lobby</h1>
+    <div id="video-grid"></div>
+  </div>
+  
+  <!-- Start Game button form in room.ejs -->
+  <div class="start-game-container">
+    <button onclick="startGame()">Start Game</button>
+</div>
+
+
+</div>
+</body>
+</html>
