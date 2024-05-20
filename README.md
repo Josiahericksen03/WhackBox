@@ -58,5 +58,4 @@ To run this program, follow these steps after pulling the project:
    ```bash
    npx peerjs --port 3001
    ```
-```
 
